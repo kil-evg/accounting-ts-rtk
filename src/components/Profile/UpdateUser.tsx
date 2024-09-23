@@ -9,9 +9,9 @@ export const UpdateUser = () => {
 
     switch (updateMode) {
         case UpdateMode.EDIT_PROFILE:
-            return <EditProfile />;
-        case UpdateMode.EDIT_PROFILE:
-            return <ChangePassword />
+            return <EditProfile onClose={() => setUpdateMode(UpdateMode.DEFAULT)} />;
+        case UpdateMode.CHANGE_PASSWORD:
+            return <ChangePassword onClose={() => setUpdateMode(UpdateMode.DEFAULT)} />
         default:
             return (
                 <div>

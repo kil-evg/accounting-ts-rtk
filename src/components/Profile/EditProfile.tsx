@@ -1,8 +1,13 @@
 import { useState } from "react";
 
-export const EditProfile = () => {
+interface EditProfileProps {
+  onClose: () => void;
+}
+
+export const EditProfile = ({ onClose }: EditProfileProps) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+
 
   const handleClickClear = () => {
     setFirstName('');
@@ -12,12 +17,14 @@ export const EditProfile = () => {
   const handleClickSave = () => {
     //TODO Save updated profile and close form
     alert('Save profile')
-  } 
+
+  }
 
   const handleClickClose = () => {
     //TODO Close edit profile without Save
     alert('Close form profile')
-  } 
+    onClose();
+  }
 
   return (
     <div>

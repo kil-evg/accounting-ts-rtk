@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-export const ChangePassword = () => {
+interface ChangePasswordProps {
+    onClose: () => void;
+  }
+
+export const ChangePassword = ({onClose}:ChangePasswordProps ) => {
 
     const [oldPassword, setOldPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
@@ -25,6 +29,7 @@ export const ChangePassword = () => {
       const handleClickClose = () => {
         //TODO Close change password without Save
         alert('Close change password without Save')
+        onClose();
       } 
 
   return (
